@@ -7,12 +7,12 @@
   <meta name="description" content="MAQUIS CHIC RR, bar restaurant à Lomé (Résidence Renaissance). Spécialités africaines, grillades, plats faits maison. Réservez ou commandez sur WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ================= EN-TÊTE (comme le modèle : logo, navigation en petites capitales, bouton commande) ================= -->
+  <!-- ================= EN-TÊTE ================= -->
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a href="#top" class="brand">
@@ -35,28 +35,41 @@
     </div>
   </header>
 
-  <!-- ================= HERO (comme le modèle : fond sombre, titre centré, badge, 2 boutons) ================= -->
+  <!-- ================= HERO — comme la photo 1 : le nom AVANT la photo, police du logo ================= -->
   <section class="hero" id="accueil">
-    <img src="images/hero.jpg" alt="Le maquis MAQUIS CHIC RR" class="hero-img">
-    <div class="hero-overlay">
-      <div class="container hero-content">
-       
-        <h1>MAQUIS CHIC RR</h1>
-        <p class="hero-tagline">Cuisine africaine, Saveur authentique.</p>
-
-        <div class="hero-actions">
-          <a href="#menu" class="btn btn-light">Voir le menu</a>
-          <a href="#reservation" class="btn btn-outline-light">Réserver une table</a>
-        </div>
+    <div class="container hero-head">
+      <!-- Titre géant dans la police du logo (Anton : sans-serif condensée, très grasse) -->
+      <h1 class="hero-title">MAQUIS CHIC <span class="rr">RR</span></h1>
+      <p class="hero-sub">Bar Restaurant</p>
+    </div>
+    <div class="hero-photo">
+      <!--
+        PHOTO HERO — photo d'ambiance du maquis, SANS voile (elle s'affiche telle quelle).
+        Pour l'ajouter : mets ton image dans images/ (ex. images/ambiance.jpg), puis remplace le bloc
+        <div class="photo-slot photo-slot-hero"> par :
+        <img src="images/ambiance.jpg" alt="Le maquis MAQUIS CHIC RR" class="hero-img">
+      -->
+      <div class="photo-slot photo-slot-hero" data-slot="ambiance">
+        <span class="photo-icon">📷</span>
+        <span class="photo-label">Photo d'ambiance à ajouter (plein écran, sans voile)</span>
+      </div>
+      <span class="hero-stamp">Lomé • Togo</span>
+    </div>
+    <div class="container hero-cta">
+      <p class="hero-tagline">La cuisine africaine authentique, faite maison, au cœur de Lomé.</p>
+      <p class="hero-status"><span class="dot" id="openDot"></span> <span id="openStatus">Ouvert actuellement</span></p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">Voir le menu</a>
+        <a href="#reservation" class="btn btn-outline">Réserver une table</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= À PROPOS (comme le modèle : "A Culinary Experience" / "About Us") ================= -->
+  <!-- ================= À PROPOS ================= -->
   <section class="about" id="apropos">
     <div class="container about-inner">
       <div class="about-text">
-
+        <p class="section-eyebrow">Une expérience culinaire</p>
         <h2 class="section-title left">À propos de MAQUIS CHIC RR</h2>
         <p>
           Bienvenue chez MAQUIS CHIC RR, votre bar restaurant à la Résidence Renaissance à Lomé.
@@ -69,6 +82,7 @@
         </p>
         <div class="about-actions">
           <a href="#menu" class="btn btn-outline">Voir le menu</a>
+          <a href="#cuisine" class="btn btn-link">Notre cuisine →</a>
         </div>
       </div>
       <div class="about-media">
@@ -81,10 +95,10 @@
     </div>
   </section>
 
-  <!-- ================= INGRÉDIENTS FRAIS (comme le modèle : bandeau photos + boutons) ================= -->
+  <!-- ================= INGRÉDIENTS FRAIS : bandeau photos ================= -->
   <section class="fresh">
     <div class="container">
-
+      <p class="section-eyebrow center">Des ingrédients frais, de saison</p>
       <h2 class="section-title">Le goût du fait maison</h2>
       <div class="fresh-strip">
         <!-- EMPLACEMENTS PHOTOS (3) : remplace chaque bloc par <img src="images/plat-1.jpg" alt="..." class="strip-img"> -->
@@ -94,11 +108,12 @@
       </div>
       <div class="fresh-actions">
         <a href="#menu" class="btn btn-outline">Voir le menu</a>
+        <a href="#apropos" class="btn btn-outline">À propos de nous</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= MENU (comme la page Menus du modèle : 2 rubriques, prix alignés) ================= -->
+  <!-- ================= MENU ================= -->
   <!--
     ⚠️ PLATS ET PRIX D'EXEMPLE — à remplacer par le vrai menu du maquis.
   -->
@@ -150,7 +165,7 @@
     </div>
   </section>
 
-  <!-- ================= GALERIE (comme le modèle : grande grille sur fond sombre) ================= -->
+  <!-- ================= GALERIE ================= -->
   <section class="gallery" id="galerie">
     <div class="container">
       <p class="section-eyebrow center light">Expériences</p>
@@ -168,19 +183,21 @@
     </div>
   </section>
 
-  <!-- ================= NOTRE CUISINE (comme le modèle : "Fresh From Our Kitchen" / "Master Kitchen") ================= -->
-  <section class="kitchen">
-    <div class="container kitchen-inner">
-      <div class="kitchen-media">
-        <!-- EMPLACEMENT PHOTO : remplace ce bloc par <img src="images/cuisine.jpg" alt="Notre cuisine" class="kitchen-img"> -->
-        <div class="photo-slot" data-slot="cuisine">
-          <span class="photo-icon">📷</span>
-          <span class="photo-label">Photo de la cuisine à ajouter</span>
-        </div>
-      </div>
-      <div class="kitchen-text">
-        <p class="section-eyebrow">De notre cuisine</p>
-        <h2 class="section-title left">Une cuisine de passion</h2>
+  <!-- ================= DE NOTRE CUISINE — comme la photo 2 : grande photo en fond, carte posée dessus ================= -->
+  <section class="kitchen" id="cuisine">
+    <!--
+      PHOTO DE FOND — grande photo d'ambiance (table dressée, cuisine, service).
+      Pour l'ajouter : mets ton image dans images/ (ex. images/cuisine.jpg), puis remplace le bloc
+      <div class="photo-slot photo-slot-kitchen-bg"> par :
+      <img src="images/cuisine.jpg" alt="Notre cuisine" class="kitchen-bg-img">
+    -->
+    <div class="photo-slot photo-slot-kitchen-bg" data-slot="cuisine-bg">
+      <span class="photo-icon">📷</span>
+      <span class="photo-label">Grande photo de fond à ajouter</span>
+    </div>
+    <div class="container kitchen-card-wrap">
+      <div class="kitchen-card">
+        <h2>Une cuisine fraîche et de saison</h2>
         <p>
           Derrière chaque plat, une équipe qui aime cuisiner. Nos grillades sont préparées à la
           commande, nos sauces mijotent chaque matin, et nos produits viennent du marché.
@@ -189,15 +206,12 @@
           C'est cette exigence simple — du frais, du fait maison, du généreux — qui fait revenir
           nos clients. Et qui leur donne envie de revenir avec des amis.
         </p>
-        <div class="kitchen-actions">
-          <a href="#apropos" class="btn btn-outline">À propos de nous</a>
-          <a href="#menu" class="btn btn-outline">Voir le menu</a>
-        </div>
+        <a href="#apropos" class="btn btn-primary">À propos de nous</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= CARROUSEL (comme le modèle : flèches Précédent / Suivant) ================= -->
+  <!-- ================= CARROUSEL ================= -->
   <section class="carousel-section">
     <div class="container">
       <div class="carousel" id="carousel">
@@ -214,7 +228,47 @@
     </div>
   </section>
 
-  <!-- ================= RÉSERVER UNE TABLE (comme le modèle : formulaire convives / date / heure / salle) ================= -->
+  <!-- ================= TÉMOIGNAGES — vrais avis Google du maquis ================= -->
+  <section class="testimonials" id="avis">
+    <div class="container">
+      <div class="testimonials-head">
+        <div>
+          <h2>Avis clients.</h2>
+          <p class="testimonials-rating"><span class="g-badge" aria-label="Google">G</span> <strong>4,6 / 5</strong> <span class="stars">★★★★★</span> sur Google</p>
+        </div>
+        <a class="testimonials-link" href="https://www.google.com/maps?q=6.174682,1.230553" target="_blank" rel="noopener">Voir sur Google Maps</a>
+      </div>
+      <div class="testimonials-grid">
+        <article class="review-card">
+          <div class="review-top"><h3>Mathya K.</h3><span class="g-badge" aria-label="Google">G</span></div>
+          <p class="review-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          <p class="review-text">« Faites vous plaisir!!! Si vous voulez passer du bon temps, savourer une ambiance qui mêle douceur, convivialité et luxe, et si vous voulez surtout égayer vos papilles, je vous le recommande vivement »</p>
+          <p class="review-date">Il y a 4 mois</p>
+        </article>
+        <article class="review-card">
+          <div class="review-top"><h3>Jason d'ALMEIDA</h3><span class="g-badge" aria-label="Google">G</span></div>
+          <p class="review-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          <p class="review-text">« C'est vraiment paisible, calme, chaleureux et accueillant. Un petit paradis... »</p>
+          <p class="review-date">Il y a 6 mois</p>
+        </article>
+        <article class="review-card">
+          <div class="review-top"><h3>Numa .M</h3><span class="g-badge" aria-label="Google">G</span></div>
+          <p class="review-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          <p class="review-text">« Découverte inopinée très appréciée. Lieu aéré, chic, agréable, calme. »</p>
+          <p class="review-date">Il y a 2 jours</p>
+        </article>
+        <article class="review-card">
+          <div class="review-top"><h3>Olip Bar</h3><span class="g-badge" aria-label="Google">G</span></div>
+          <p class="review-stars" aria-label="5 étoiles sur 5">★★★★★</p>
+          <p class="review-text">« Un lieu très chic et calme. Une belle représentation des villes »</p>
+          <p class="review-date">Il y a un an</p>
+        </article>
+      </div>
+      <p class="testimonials-note">Avis publiés sur Google, textes reproduits tels quels. 18 avis au total : 12 à 5 étoiles, 5 à 4 étoiles, 1 à 3 étoiles.</p>
+    </div>
+  </section>
+
+  <!-- ================= RÉSERVER UNE TABLE ================= -->
   <section class="booking" id="reservation">
     <div class="container booking-inner">
       <p class="section-eyebrow center">Réservations</p>
@@ -266,13 +320,13 @@
     </div>
   </section>
 
-  <!-- ================= PIED DE PAGE (comme le modèle : adresse, contact, horaires, réseaux, mentions) ================= -->
+  <!-- ================= PIED DE PAGE ================= -->
   <footer class="site-footer" id="infos">
     <div class="container footer-grid">
       <div class="footer-col footer-brand">
         <img src="images/logo.jpg" alt="Logo MAQUIS CHIC RR" class="footer-logo">
         <p><strong>MAQUIS CHIC RR</strong><br>Bar Restaurant • Spécialité Africaine</p>
-        <p class="footer-rating">★★★★★ <strong>4,6/5</strong> sur Google (16 avis)</p>
+        <p class="footer-rating">★★★★★ <strong>4,6/5</strong> sur Google (18 avis)</p>
       </div>
       <div class="footer-col">
         <h3>Contact</h3>
@@ -282,7 +336,7 @@
       </div>
       <div class="footer-col">
         <h3>Horaires</h3>
-        <!-- Horaires repris de la fiche Google (à confirmer : lundi non renseigné, probablement fermé) -->
+        <!-- Horaires confirmés sur la fiche Google (lundi fermé, mar–dim 10h–22h) -->
         <p>Lundi : Fermé<br>Mardi – Dimanche : 10h00 – 22h00</p>
         <p><a class="btn btn-whatsapp btn-sm" href="https://wa.me/22870751719?text=Bonjour%20MAQUIS%20CHIC%20RR." target="_blank" rel="noopener">Nous écrire sur WhatsApp</a></p>
       </div>

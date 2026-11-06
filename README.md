@@ -1,11 +1,22 @@
-# Maquette — MAQUIS CHIC RR (v2)
+# Maquette — MAQUIS CHIC RR (v3)
 
 Maquette une page (HTML / CSS / JS séparés), prête à pousser sur le repo.
-**Version 2 : rendu très proche du modèle Wix « Restaurant (Classic) »** —
-même ordre des sections, même ambiance visuelle (fond vert-bleu sombre,
-grands panneaux crème, gros titres bordeaux en serif, navigation en petites
-capitales, boutons encadrés), traduit en français, avec les plats en FCFA
-et WhatsApp à la place du système de réservation Wix.
+**Version 3 :**
+- Hero refait comme la capture du modèle : le nom géant AVANT la photo, dans la
+  police du logo (Anton, sans-serif condensée très grasse), photo plein écran
+  SANS voile, petit badge incliné « Lomé • Togo » sur la photo.
+- Section « De notre cuisine » refaite comme la capture : grande photo en fond,
+  carte crème posée dessus avec titre serif bordeaux, texte et bouton bordeaux.
+- Palette 100 % couleurs du logo (bordeaux, noir, crème, orange-rouge) — le
+  vert-bleu du modèle Wix est supprimé. Rendu épuré et premium.
+- Section témoignages : VRAIS avis Google du maquis (relevés le 2026-11-06) :
+  4,6/5, 18 avis (12 à 5 étoiles, 5 à 4, 1 à 3). 4 cartes : Mathya K., Jason
+  d'ALMEIDA, Numa .M, Olip Bar — textes reproduits tels quels. Note : l'avis de
+  Numa .M n'est lisible en français que pour son début (« Découverte inopinée
+  très appréciée. Lieu aéré, chic, agréable, calme. »), la suite n'étant
+  disponible que via la traduction automatique de Google — seul le début
+  vérifié est affiché.
+- Horaires confirmés sur la fiche Google : lundi fermé, mar–dim 10h–22h.
 
 ## Sections (dans l'ordre du modèle)
 

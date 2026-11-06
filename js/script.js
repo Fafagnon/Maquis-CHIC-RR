@@ -4,7 +4,7 @@
    - Carrousel d'images (Précédent / Suivant + points)
    - Formulaire de réservation : envoie la demande sur WhatsApp
    - Badge "Ouvert / Fermé" calculé d'après les horaires Google
-     (Mar–Dim 10h–22h, lundi fermé — à confirmer)
+     (Mar–Dim 10h–22h, lundi fermé — confirmé sur la fiche Google)
    ============================================================ */
 
 (function () {
