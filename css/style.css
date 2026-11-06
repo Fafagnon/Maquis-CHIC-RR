@@ -101,6 +101,7 @@ section { padding: 5.2rem 0; }
   letter-spacing: 0.14em;
 }
 .btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
 .btn-sm { padding: 0.65rem 1.1rem; font-size: 0.78rem; }
 .btn-lg { padding: 1.05rem 2.2rem; font-size: 0.95rem; }
 
@@ -193,7 +194,7 @@ section { padding: 5.2rem 0; }
 .hero-head { text-align: center; }
 .hero-title {
   font-family: var(--font-logo);
-  font-size: clamp(3rem, 10vw, 7.2rem);
+  font-size: clamp(3rem, 11vw, 9rem);
   line-height: 0.95;
   color: var(--maroon);
   margin: 0;
@@ -211,13 +212,13 @@ section { padding: 5.2rem 0; }
 }
 .hero-photo {
   position: relative;
-  width: min(1240px, 96%);
+  width: min(1600px, 96%);
   margin: 0 auto;
 }
 .hero-photo .photo-slot-hero { min-height: 480px; }
 .hero-img {
   width: 100%;
-  height: 480px;
+  height: clamp(420px, 52vw, 720px);
   object-fit: cover;
   display: block;
 }
@@ -275,21 +276,42 @@ section { padding: 5.2rem 0; }
 }
 .photo-icon { font-size: 1.8rem; }
 .photo-label { font-size: 0.88rem; font-weight: 500; }
+.about-media, .fresh-strip { overflow: hidden; }
 .about-img, .strip-img, .gallery-img, .slide-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius);
 }
+.about-img, .fresh-strip .strip-img {
+  transition: transform 0.45s ease;
+}
+.about-media:hover .about-img, .fresh-strip .strip-img:hover {
+  transform: scale(1.025);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ---------- À propos ---------- */
 .about { background: var(--cream); }
 .about-inner {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 3.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
   align-items: center;
 }
+.about-text .section-title {
+  font-size: clamp(1rem, 2.6vw, 2rem);
+  white-space: nowrap;
+}
+.about-img { height: clamp(320px, 36vw, 440px); }
 .about-text p { color: #4a3f36; }
 .about-actions { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; margin-top: 1.6rem; }
 
@@ -302,6 +324,7 @@ section { padding: 5.2rem 0; }
   margin-bottom: 2.2rem;
 }
 .fresh-strip .photo-slot { min-height: 250px; }
+.fresh-strip .strip-img { height: clamp(260px, 27vw, 340px); }
 .fresh-actions { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
 
 /* ---------- Menu ---------- */
@@ -553,7 +576,13 @@ section { padding: 5.2rem 0; }
 
 /* ---------- Réservation ---------- */
 .booking { background: var(--white); }
-.booking-inner { max-width: 860px; }
+.booking-inner { max-width: 1120px; }
+.booking-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.5rem;
+}
 .booking-form {
   background: var(--cream-2);
   border: 1px solid var(--cream-line);
@@ -561,9 +590,30 @@ section { padding: 5.2rem 0; }
   padding: 2.2rem;
   text-align: center;
 }
+.booking-map {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.4rem;
+  background: var(--cream-2);
+  border: 1px solid var(--cream-line);
+  border-radius: var(--radius);
+}
+.booking-map h3 {
+  margin: 0 0 1rem;
+  color: var(--maroon);
+  font-size: 1.25rem;
+}
+.booking-map iframe {
+  width: 100%;
+  min-height: 390px;
+  flex: 1;
+  border: 0;
+  border-radius: var(--radius);
+}
 .form-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-bottom: 1.7rem;
   text-align: left;
@@ -644,8 +694,9 @@ section { padding: 5.2rem 0; }
   .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials-head { flex-direction: column; gap: 0.8rem; }
   .form-row { grid-template-columns: repeat(2, 1fr); }
+  .booking-layout { grid-template-columns: 1fr; }
+  .booking-map iframe { min-height: 340px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .hero-photo .photo-slot-hero, .hero-img { min-height: 340px; height: 340px; }
   .carousel-slide { min-height: 300px; }
   .kitchen-card { padding: 2.4rem 1.6rem; }
 }
@@ -670,5 +721,20 @@ section { padding: 5.2rem 0; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   section { padding: 3.5rem 0; }
+  .hero-img { height: clamp(300px, 85vw, 440px); }
+  .about-img { height: clamp(260px, 70vw, 380px); }
+  .fresh-strip .strip-img { height: clamp(260px, 80vw, 380px); }
   .hero-stamp { font-size: 0.9rem; padding: 0.5rem 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .about-img, .fresh-strip .strip-img, .reveal {
+    transition: none;
+  }
+  .about-media:hover .about-img, .fresh-strip .strip-img:hover,
+  .btn:hover, .btn:active {
+    transform: none;
+  }
+  .reveal { opacity: 1; }
 }

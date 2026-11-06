@@ -28,6 +28,27 @@
     });
   }
 
+  /* ---------- Apparition des sections au défilement ---------- */
+  var revealItems = document.querySelectorAll(
+    ".about-inner, .fresh .container, .menu .container, .kitchen-card, "
+      + ".testimonials-head, .testimonials-grid, .booking-inner"
+  );
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reducedMotion && "IntersectionObserver" in window) {
+    var revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach(function (item) {
+      item.classList.add("reveal");
+      revealObserver.observe(item);
+    });
+  }
+
   /* ---------- Carrousel ---------- */
   var track = document.getElementById("carouselTrack");
   var dotsWrap = document.getElementById("carouselDots");
